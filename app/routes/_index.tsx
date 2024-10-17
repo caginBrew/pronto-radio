@@ -1,4 +1,6 @@
 import type { MetaFunction } from "@remix-run/node";
+import HeaderSection from "~/components/header-section/header-section";
+import HeroSection from "~/components/hero-section/hero-section";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,45 +11,34 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex h-screen items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
-            yarrm <span className="sr-only">Remix</span>
-          </h1>
-          <div className="h-[144px] w-[434px]">
-            <img
-              src="/logo-light.png"
-              alt="Remix"
-              className="block w-full dark:hidden"
-            />
-            <img
-              src="/logo-dark.png"
-              alt="Remix"
-              className="hidden w-full dark:block"
-            />
-          </div>
-        </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
-            What&apos;s next?
-          </p>
-          <ul>
-            {resources.map(({ href, text, icon }) => (
-              <li key={href}>
-                <a
-                  className="group flex items-center gap-3 self-stretch p-3 leading-normal text-blue-700 hover:underline dark:text-blue-500"
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {icon}
-                  {text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+    <div className="w-full h-96">
+      <div className=" w-full h-16 bg-blue-600 flex justify-between items-center px-4">
+        <div className="flex items-center space-x-4">
+          <HeaderSection
+            button={[
+              { url: "/", label: "Ana Sayfa" },
+              { url: "/", label: "Türler" },
+              { url: "/", label: "Dünyadan" },
+            ]}
+          ></HeaderSection>
+        </div>
+        <div className="flex items-center space-x-4">
+          <a href="">
+            <button className="bg-secondary text-black text-sm font-semibold h-10 px-6 rounded-[32px] hover:bg-secondary-hover transition-colors duration-400">
+              Radyo listesi oluştur
+            </button>
+          </a>
+
+          <a href="">
+            <button className="h-10 w-10 bg-red-500 rounded-full"></button>
+          </a>
+        </div>
+      </div>
+
+      <div className="flex bg-white h-[21rem] w-screen items-center justify-center">
+        <HeroSection
+          title={[" Endless Stations,", " Global Beats,", " Pronto Radio."]}
+        />
       </div>
     </div>
   );

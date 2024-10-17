@@ -6,16 +6,14 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          '"Inter"',
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif",
-          '"Apple Color Emoji"',
-          '"Segoe UI Emoji"',
-          '"Segoe UI Symbol"',
-          '"Noto Color Emoji"',
+          '"Plus Jakarta Sans"', 'sans-serif'
         ],
       },
+      colors: {
+        'primary-hover': '#FFFFFF29',
+        secondary: "#E6E953",
+        'secondary-hover': '#A3A53B'
+    },
     },
   },
   plugins: [],
